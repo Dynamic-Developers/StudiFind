@@ -44,7 +44,11 @@
   },
   "scripts": {
     "test": "tape test/*.js",
-      "start": "nodemon app.js"
+    "start": "nodemon app.js"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "ionic-native": "https://github.com/ionic-team/ionic-native/tarball/v3.5.0",
+    "nodemon": "^1.17.1"
+  }
 }
