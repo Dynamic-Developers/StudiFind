@@ -44,7 +44,7 @@
   },
   "scripts": {
     "test": "tape test/*.js",
-       "start" : "nodemon ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "version": "1.0.0",
   "dependencies": {
