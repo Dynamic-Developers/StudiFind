@@ -48,6 +48,7 @@
   },
   "version": "1.0.0",
   "dependencies": {
+    "express": "^4.16.2",
     "ionic-native": "https://github.com/ionic-team/ionic-native/tarball/v3.5.0",
     "nodemon": "^1.17.1"
   }
