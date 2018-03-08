@@ -48,8 +48,12 @@
   },
   "version": "1.0.0",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "ionic-native": "https://github.com/ionic-team/ionic-native/tarball/v3.5.0",
-    "nodemon": "^1.17.1"
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.1",
+    "serve-favicon": "^2.4.5"
   }
 }
