@@ -44,7 +44,10 @@
   },
   "scripts": {
     "test": "tape test/*.js",
-      "start": "nodemon app.js"
+    "start": "nodemon app.js"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "jsonwebtoken": "^8.2.0"
+  }
 }
