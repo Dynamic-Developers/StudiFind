@@ -43,7 +43,8 @@
     "url": "git+ssh://git@github.com/calvinmetcalf/buffer-shims.git"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+      "start": "nodemon app.js"
   },
   "version": "1.0.0"
 }
