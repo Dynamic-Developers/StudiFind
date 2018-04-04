@@ -14,6 +14,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -33,6 +34,7 @@ app.use(function(req, res, next) {
 });
 
 
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -44,5 +46,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
+app.get('/contact', routes.contact);
 module.exports = app;
