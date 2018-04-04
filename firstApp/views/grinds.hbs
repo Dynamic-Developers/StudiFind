@@ -1,0 +1,32 @@
+<head>
+<body>
+
+
+{{#each contact}}
+       {{#ifEquals category "grinds"}}
+    <tr>
+        <th> Product Name:</th>
+       <td><div class="title">{{title}}</div></td>
+       </tr>
+       <tr>
+           <th>Description:</th> 
+        <td><div class="description">{{description}}</div> </td>
+        </tr>
+       <tr>
+           <th> Price: </th>
+       
+       <td> <div class="price">{{price}}</div> </td>
+       </tr>
+       <tr>
+           <th> County:</th>
+        <td><div class="county">{{county}}</div></td>
+       </tr>
+    <tr><td><br /></td></tr>
+    <tr><td><br /></td></tr>
+       {{/ifEquals}}
+{{/each}}
+
+    
+
+    </body>
+</head>

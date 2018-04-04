@@ -4,6 +4,12 @@ var Comment = require('../models/comments');
 var User = require('../models/users');
 var jwt = require('jsonwebtoken');
 var formidable = require('formidable');
+var Contact = require('../models/contact');
+const nodemailer = require('nodemailer');
+
+var app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -18,7 +24,8 @@ router.get('/feed', function(req, res, next) {
         var jwtString = req.cookies.Authorization.split(" ");
         var profile = verifyJwt(jwtString[1]);
         if (profile) {
-            res.render('feed');
+         		 res.render('feed');
+
         }
     }catch (err) {
             res.json({
@@ -29,13 +36,97 @@ router.get('/feed', function(req, res, next) {
             });
         }
 });
+router.get('/book', function(req, res, next) {
+
+   	 
+      Contact.find({}, function(err, contacts)
+            {
+            res.render('book', {contact : contacts});    
+            });
+
+        
+    
+        
+});
+
+router.get('/shoe', function(req, res, next) {
+
+   	 
+      Contact.find({}, function(err, contacts)
+            {
+            res.render('shoe', {contact : contacts});    
+            });
+
+        
+    
+        
+});
+
+router.get('/clothes', function(req, res, next) {
+
+   	 
+      Contact.find({}, function(err, contacts)
+            {
+            res.render('clothes', {contact : contacts});    
+            });
+
+        
+    
+        
+});
+
+router.get('/electronic', function(req, res, next) {
+
+   	 
+      Contact.find({}, function(err, contacts)
+            {
+            res.render('electronic', {contact : contacts});    
+            });
+
+        
+    
+        
+});
+
+router.get('/notes', function(req, res, next) {
+
+   	 
+      Contact.find({}, function(err, contacts)
+            {
+            res.render('notes', {contact : contacts});    
+            });
+
+        
+    
+        
+});
+
+router.get('/grinds', function(req, res, next) {
+
+   	 
+      Contact.find({}, function(err, contacts)
+            {
+            res.render('grinds', {contact : contacts});    
+            });
+
+        
+    
+        
+});
+
 router.get('/contact', function(req, res, next) {
 
+    req.param.id;
+    
     try {
         var jwtString = req.cookies.Authorization.split(" ");
         var profile = verifyJwt(jwtString[1]);
         if (profile) {
-            res.render('contact');
+            Contact.find({category:req.param.id}, function(err, contacts)
+            {
+            res.render('contact', {contact : contacts});    
+            });
+            
         }
     }catch (err) {
             res.json({
@@ -46,6 +137,12 @@ router.get('/contact', function(req, res, next) {
             });
         }
 });
+
+router.get('/contactus', function(req, res, next) {
+  res.render('contactus', { title: 'Express' });
+});
+
+
 router.post('/addComment',function(req,res,next){
     
 	comment = new Comment(req.body);
@@ -100,35 +197,42 @@ router.delete('/removeComment/:id', function(req, res, next){
 });
 
 
-router.get('/contact', (req, res) => {
-  res.render('contact', {
-    data: {},
-    errors: {}
-  })
-})
 
-router.post('/contact', (req, res) => {
-  res.render('contact', {
-    data: req.body, // { message, email }
-    errors: {
-      message: {
-        msg: 'A message is required'
-      },
-      email: {
-        msg: 'That email doesn‘t look right'
-      }
-    }
-  })
-})
-/*
- Verifies a JWT
- */
+
+router.post('/addContact',function(req,res,next){
+    
+	contact = new Contact(req.body);
+	contact.save(function (err, savedContact) {
+		if (err)
+			throw err;
+        
+        res.json(
+		// res.status(301).redirect("http://danu7.it.nuigalway.ie:8625")
+		);
+	});
+
+});
+router.get('/getContact', function(req,res,next) {
+    Contact.find({},function(err,contacts)
+                 {
+        if(err)
+            res.send(err);
+        
+        res.json(contacts);
+        
+    })
+});
+
+var hbs = require('hbs');
+hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+    
+
 function verifyJwt(jwtString) {
 
     var value = jwt.verify(jwtString, 'CSIsTheWorst');
     return value;
 }
-
-
 
 module.exports = router;
