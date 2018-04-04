@@ -100,26 +100,7 @@ router.delete('/removeComment/:id', function(req, res, next){
 });
 
 
-router.get('/contact', (req, res) => {
-  res.render('contact', {
-    data: {},
-    errors: {}
-  })
-})
 
-router.post('/contact', (req, res) => {
-  res.render('contact', {
-    data: req.body, // { message, email }
-    errors: {
-      message: {
-        msg: 'A message is required'
-      },
-      email: {
-        msg: 'That email doesn‘t look right'
-      }
-    }
-  })
-})
 /*
  Verifies a JWT
  */
