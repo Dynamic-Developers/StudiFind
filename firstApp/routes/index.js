@@ -4,7 +4,8 @@ var Comment = require('../models/comments');
 var User = require('../models/users');
 var jwt = require('jsonwebtoken');
 var formidable = require('formidable');
-
+var Contact = require('../models/contact');
+const nodemailer = require('nodemailer');
 
 var app = express();
 const bodyParser = require('body-parser');
@@ -137,10 +138,9 @@ router.get('/contact', function(req, res, next) {
         }
 });
 
-router.get('/contactus', function(req, res, next) {
-  res.render('contactus', { title: 'Express' });
-});
-
+exports.contactus = function(req, res){
+    res.render('contactus', { title: 'Raging Flame Laboratory - Contact', page: 'contactus' })
+};
 
 router.post('/addComment',function(req,res,next){
     
