@@ -4,8 +4,7 @@ var Comment = require('../models/comments');
 var User = require('../models/users');
 var jwt = require('jsonwebtoken');
 var formidable = require('formidable');
-var Contact = require('../models/contact');
-const nodemailer = require('nodemailer');
+
 
 var app = express();
 const bodyParser = require('body-parser');
