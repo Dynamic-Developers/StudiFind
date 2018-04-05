@@ -206,7 +206,7 @@ router.post('/addContact',function(req,res,next){
 			throw err;
         
         res.json(
-		// res.status(301).redirect("http://danu7.it.nuigalway.ie:8625")
+		 res.status(301).redirect("http://danu7.it.nuigalway.ie:8625")
 		);
 	});
 
