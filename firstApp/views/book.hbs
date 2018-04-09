@@ -1,5 +1,6 @@
 <head>
 
+    <link href="/stylesheets/catagories.css" rel="stylesheet">
 <body>
 
    <table>
@@ -7,20 +8,20 @@
 {{#each contact}}
        {{#ifEquals category "book"}}
     <tr>
-        <th> Product Name:</th>
+        <th style="color:red; font-size:40px; font-family:verdana;"> Product Name:</th>
        <td><div class="title">{{title}}</div></td>
        </tr>
        <tr>
-           <th>Description:</th> 
+           <th style="color:red; font-size:40px; font-family:verdana;">Description:</th> 
         <td><div class="description">{{description}}</div> </td>
         </tr>
        <tr>
-           <th> Price: </th>
+           <th style="color:red; font-size:40px; font-family:verdana;"> Price: </th>
        
        <td> <div class="price">{{price}}</div> </td>
        </tr>
        <tr>
-           <th> County:</th>
+           <th style="color:red; font-size:40px; font-family:verdana;"> County:</th>
         <td><div class="county">{{county}}</div></td>
        </tr>
         
