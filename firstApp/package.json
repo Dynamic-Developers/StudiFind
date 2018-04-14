@@ -57,8 +57,10 @@
     "ionic-native": "https://github.com/ionic-team/ionic-native/tarball/v3.5.0",
     "mongoose": "^5.0.9",
     "morgan": "^1.9.0",
+    "multer": "^1.3.0",
     "nodemailer": "^4.6.4",
     "nodemon": "^1.17.1",
-    "serve-favicon": "^2.4.5"
+    "serve-favicon": "^2.4.5",
+    "socket.io": "^2.1.0"
   }
 }
