@@ -4,6 +4,12 @@
 
 {{#each contact}}
        {{#ifEquals category "grinds"}}
+    
+    <tr>
+           <th> </th>
+       
+       <td> <div class="image"><img src="{{image}}"></div> </td>
+       </tr>
     <tr>
         <th> Product Name:</th>
        <td><div class="title">{{title}}</div></td>
@@ -12,6 +18,7 @@
            <th>Description:</th> 
         <td><div class="description">{{description}}</div> </td>
         </tr>
+    
        <tr>
            <th> Price: </th>
        

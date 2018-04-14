@@ -5,18 +5,26 @@ var User = require('../models/users');
 var jwt = require('jsonwebtoken');
 var formidable = require('formidable');
 var Contact = require('../models/contact');
-const nodemailer = require('nodemailer');
-
+var morgan = require('morgan');
+//const nodemailer = require('nodemailer');
+var multer = require('multer');
 var app = express();
-const bodyParser = require('body-parser');
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(morgan('dev'));
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
+app.get('/', function(req, res){
+res.sendFile(__dirname + '/chat');
+});
 /* GET feed page. */
 router.get('/feed', function(req, res, next) {
 
@@ -36,6 +44,8 @@ router.get('/feed', function(req, res, next) {
             });
         }
 });
+
+
 router.get('/book', function(req, res, next) {
 
    	 
@@ -114,6 +124,9 @@ router.get('/grinds', function(req, res, next) {
         
 });
 
+
+
+
 router.get('/contact', function(req, res, next) {
 
     req.param.id;
@@ -138,9 +151,6 @@ router.get('/contact', function(req, res, next) {
         }
 });
 
-exports.contactus = function(req, res){
-    res.render('contactus', { title: 'Raging Flame Laboratory - Contact', page: 'contactus' })
-};
 
 router.post('/addComment',function(req,res,next){
     
@@ -155,6 +165,10 @@ router.post('/addComment',function(req,res,next){
 	});
 
 });
+var path = require('path'),
+    fs = require('fs');
+
+
 
 router.get('/getComments', function(req,res,next) {
     Comment.find({},function(err,comments)
@@ -221,6 +235,9 @@ router.get('/getContact', function(req,res,next) {
         
     })
 });
+router.get('/contactus', function(req, res, next) {
+  res.render('contactus', { title: 'Express' });
+});
 
 var hbs = require('hbs');
 hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
@@ -228,10 +245,14 @@ hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
 });
     
 
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
 function verifyJwt(jwtString) {
 
     var value = jwt.verify(jwtString, 'CSIsTheWorst');
     return value;
 }
+
 
 module.exports = router;
