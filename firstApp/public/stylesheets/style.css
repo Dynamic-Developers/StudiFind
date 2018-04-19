@@ -31,9 +31,15 @@ a {
     top: -310px;
     left: 535px;
    
-
+td, tr
+{
+    padding:20px 15px 20px 15px;
 }
-
+}
+.about
+{
+      font-size: 18px;
+}
 .bottom {
     position: centered;
 }

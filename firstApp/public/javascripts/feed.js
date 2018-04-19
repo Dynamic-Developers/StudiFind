@@ -2,7 +2,7 @@ $(document).ready(
     function() {
         var totalCharacters = 140;
         var showPosts = false;
-        
+
         $("#postForm").keyup(function (event) {
             var inputText = event.target.value;
             $("#charRemaining").html(totalCharacters - inputText.length);
@@ -11,19 +11,16 @@ $(document).ready(
         /**
          * When the page loads (or is refreshed) we request all comments from the server
          */
-        
-       
         function getComments(){
 
             $.get( "/getComments", function( data ) {
                 var posts = "";
-                var user ="";
+                
                 for(var i=0; i<data.length; i++)
                 {
                     posts += "<div class='well'><div class='row'><div class='col-xs-9'>"
-                        + data[i].comment + "</div><div class='col-xs-3'>" +
-                        "<button type='button' name='"+data[i]._id+"' class='btn btn-danger'>" 		    +"Delete</button></div>"+"<div>"+ data[i].user_name +"</div>"+"</div></div></div>";
-                    
+                        + data[i].comment + "</div><div class='col-xs-9'>"
+                        + data[i].email + "</div>"+"</div></div></div>";
                 }
                 $( "#feedPosts" ).html( posts );
                 $( "#count" ).html(data.length);

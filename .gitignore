@@ -1,5 +1,14 @@
 
+<<<<<<< HEAD
 .DS_Store
 firstApp/.DS_Store
 firstApp/public/.DS_Store
 firstApp/views/.DS_Store
+=======
+firstApp/models/contact.ejs
+.DS_Store
+firstApp/.DS_Store
+>>>>>>> 9f2cd89d83d0cf932439278fe00d25938676ae7b
+.DS_Store
+firstApp/public/.DS_Store
+firstApp/.DS_Store
