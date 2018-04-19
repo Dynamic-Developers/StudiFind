@@ -4,25 +4,42 @@
        <link rel='stylesheet' href='/stylesheets/style.css' />
        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  
-		<div class="container">
-			<div class="row">
-                <img src="/images/homePic.jpg" width="1300"
-                     height="500"alt="">
-				<class="form-group">
-					    <input class="search" placeholder="">
-					  </div></center>
-					  <button type="submit" class="searchButton">Search</button>
-					</form>					
-				</div><!-- /col-lg-6 -->
-            
-				<div class="col-lg-6">
-					
-				</div><!-- /col-lg-6 -->
-				
-			</div><!-- /row -->
-		</div><!-- /container -->
-	</div><!-- /headerwrap -->
-	
+    <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="/images/img1.jpg" style="width:100%; height: 500px">
+    <div class="text"><div class="container">
+						
+				</div><!-- /col-lg-6 --></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="/images/img2.jpg" style="width:100%;height: 500px">
+    <div class="text"><div class="container">
+							
+				</div><!-- /col-lg-6 --></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="/images/img3.jpg" style="width:100%; height: 500px">
+    <div class="text"><div class="container">
+							
+				</div><!-- /col-lg-6 --></div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+
+	<center>
     <div class="container">
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3">
@@ -34,33 +51,81 @@
 		<div class="row mt">
 			<div class="col-lg-4">
 				
-                <h4><a href= "">Books</a></h4>
-				<h4><a href= "">Clothes</a></h4>
-                <h4><a href= "">Shoes</a></h4>
-                
+                <h4><a href= "/book">Books</a></h4>
+				<h4><a href= "/clothes">Clothes</a></h4>
+                 
 			</div><!--/col-lg-4 -->
 
 			<div class="col-lg-4">
 				
-				<h4><a href= "">Electronics</a></h4>
-                <h4><a href= "">Notes</a></h4>
-                <h4><a href= "">Grinds</a></h4>
-				
+				<h4><a href= "/electronic">Electronics</a></h4>
+                <h4><a href= "/notes">Notes</a></h4>
+             
 
 			</div><!--/col-lg-4 -->
 
-			
+            
+
+			<div class="col-lg-4">
+			<h4><a href= "/shoe">Shoes</a></h4>
+            <h4><a href= "/grinds">Grinds</a></h4>
+				
+                </div><!--/col-lg-4 -->
 		</div><!-- /row -->
+        
+        
 	</div><!-- /container -->
 	
 
 		<hr>
-	
-	
+
+    <div class="container">
+		<div class="row mt">
+			<div class="col-lg-6 col-lg-offset-3">
+				<h1>About us</h1>
+                <br>
+            An aspiring young startup with a mission to provide a mens for students to easily buy and sell their belongings. University is a very expensive time for parents, guardians and students. Our goal is help students easily make some extra money, while also providing quality second hand products to students at a significantly lower cost which will eleviate remove the burden many students face today with financees.
+                      </div><!--/col-lg-4 -->
+		</div><!-- /row -->
+        
+        
+	</div><!-- /container -->
+<br>
+                
+                <br>
+                  </div><!--/col-lg-4 -->
+		</div><!-- /row -->
+        
+        
+	</div><!-- /container -->
+                <h2>Contact us</h2>
+                
+  <div class="content">
+      <form action="/contactus" method="post" id="sumbit">
+        <fieldset>
+          <p>
+            <input type="text" name="name" size="30" required="" placeholder="Name:">
+          </p>
+          <p>
+            <input type="text" name="contactNo" size="30" placeholder="Contact No.:">
+          </p>
+          <p>
+            <input type="text" name="email" size="30" required="" placeholder="Email:">
+          </p>
+          <p><br>
+            <textarea type="text" name="message" cols="37" rows="7" size="30" placeholder="Your message please"></textarea>
+          </p>
+          <p>
+            <input name="submit" type="submit" value="Send" id="submit">
+          </p><br>
+        </fieldset>
+      </form>
+    </div>
 	
 		<hr>
 		<p class="bottom" >Created by Dynamic Developers 2018</p>
-	</div><!-- /container -->
+	
        <body>{{{body}}}</body>
+</center>
         
    </html>

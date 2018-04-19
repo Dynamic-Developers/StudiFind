@@ -10,4 +10,30 @@ a {
     box-sizing: border-box;
 }
 
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+.search {
+    position: relative;
+    width: 500px;
+   top: -270px;
+    left: 50px;
+    height: 40px;
+}
+
+.searchButton {
+    position: relative;
+    
+    top: -310px;
+    left: 535px;
+   
+
+}
+
+.bottom {
+    position: centered;
+}
