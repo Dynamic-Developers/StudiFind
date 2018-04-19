@@ -1,39 +1,76 @@
-<<head></head>
+<head>
+    <style>
+        td{
+            padding:0 100px 0 5px;
+        }
+}
+    </style>
+</head>
 <body>
 
 <tr><td><br /></td></tr>
     <tr><td><br /></td></tr>
 	<tr><td><br /></td></tr>
+    
 
 <input type="text" id="myInput" align:"middle"
-	onkeyup="myFunction()" placeholder="Search..." title="Type in a product">
+	onkeyup="myFunction()" placeholder="Search..." title="Type in a product" style="width: 100%; height:40px">
 
   <table id = "mytable">
-
-
+      <tr><td><br /></td></tr>
+  <tr>
+      <th>Title</th> 
+    <th>Description</th> 
+      <th>Price</th> 
+      <th>Email</th> 
+      <th>County</th> 
+      </tr>
 {{#each contact}}
        {{#ifEquals category "shoe"}}
     <tr>
-        <th> Product Name:</th>
-       <td><div class="title">{{title}}</div></td>
-       
-           <th>Description:</th> 
+        
+       <tr><td><br /></td></tr>
+    
+        
+  
+    <tr>
+      <td><div class="title" style="font-size: 20px">{{title}}</div></td>
         <td><div class="description">{{description}}</div> </td>
         
-           <th> Price: </th>
+       
+          
        
        <td> <div class="price">{{price}}</div> </td>
        
-           <th> County:</th>
+       
+       
+       
+       <td> <div class="price">{{contactEmail}}</div> </td>
+       
+           
         <td><div class="county">{{county}}</div></td>
+        
+        <td><div class="image"><img src={{image}}></div>
        </tr>
-    <tr><td><br /></td></tr>
-    <tr><td><br /></td></tr>
+   
+ 
+         <tr><td><br /></td></tr>
+	
+    
+       
        {{/ifEquals}}
+         
+     
+     
 {{/each}}
 
-</table>
+    </table>
 
+	
+	
+                     
+
+					 
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i;
@@ -53,7 +90,5 @@ function myFunction() {
   }
 }
 </script>
-
-    
 
     </body>
