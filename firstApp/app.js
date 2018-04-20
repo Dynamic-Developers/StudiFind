@@ -4,7 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
+var multer = require('multer');
+var nodemailer = require('nodemailer');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
@@ -27,40 +28,46 @@ app.use('/users', users);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+
+
+
+
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
+
+
 app.post('/contactus', function (req, res) {
-  var mailOpts, smtpTrans;
-  //Setup Nodemailer transport, I chose gmail. Create an application-specific password to avoid problems.
-  smtpTrans = nodemailer.createTransport('SMTP', {
-      service: 'Gmail',
-      auth: {
-          user: "brogan9@gmail.com",
-          pass: "application-specific-password" 
-      }
-  });
-  //Mail options
-  mailOpts = {
-      from: req.body.name + ' &lt;' + req.body.email + '&gt;', //grab form data from the request body object
-      to: 'me@gmail.com',
-      subject: 'Website contact form',
-      text: req.body.message
-  };
-  smtpTrans.sendMail(mailOpts, function (error, response) {
-      //Email not sent
-      if (error) {
-          res.render('contactus', { title: 'Raging Flame Laboratory - Contact', msg: 'Error occured, message not sent.', err: true, page: 'contactus' })
-      }
-      //Yay!! Email sent
-      else {
-          res.render('contactus', { title: 'Raging Flame Laboratory - Contact', msg: 'Message sent! Thank you.', err: false, page: 'contactus' })
-      }
-  });
+	     smtpTrans = nodemailer.createTransport({
+        service: 'Gmail', 
+        auth: {
+            type: 'OAuth2',
+            user: 'brogan9@gmail.com',
+
+		}
+	  });
+	  //Mail options
+	  mailOpts = {
+		from: req.body.name + req.body.email,
+		to: 'yyyyyyyyyy@gmail.com',
+		subject: req.body.email + '  --Msg from contactus-form',
+		text: "Name: " + req.body.name + "Email: "  + req.body.email + 
+		      "Contact No:  " + req.body.contactNo + "QUERY: " + req.body.message
+	  };
+	  smtpTrans.sendMail(mailOpts, function (error, response) {
+		//Alert on event of message sent succeeds or fail.
+		if (error) {
+		  res.render('contactus',{msg : 'Error occured, message not sent.', err : true});
+		}
+		else {
+		  res.render('contactus',{msg : 'Message sent! Thank you.', err : false});
+		}
+		smtpTrans.close();
+	  });
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -73,5 +80,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 module.exports = app;

@@ -1,0 +1,98 @@
+
+<html>
+  <head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon"href="/images/StudiFindLogo.ico">
+
+    <title>StudiFind.ie</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/main.css" rel="stylesheet">
+
+    <!-- Fonts from Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]-->
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+   
+    <!--[endif]-->
+  </head>
+
+    <!-- <div class="navbar navbar-default navbar-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>-->
+   <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><b><img src="/images/StudiFind.jpg" style="width: 100%; height: 70px;  position: absolute; left: 0px;
+    top: 0px;"></b></a>
+        </div>
+        <div id="bannerText" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/?#">Home</a></li>   
+                <li><a href="/contact">Place Ad</a></li>
+                <li><a href="/feed">Forum</a></li> 
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+            <ul class="dropdown-menu"> 
+                <li><a href="/book">Books</a></li>
+                 <li><a href="/shoe">Shoes</a></li>
+                 <li><a href="/clothes">Clothes</a></li>
+                <li><a href="/electronic">Electronics</a></li>
+                <li><a href="/notes">Notes</a></li>
+                <li><a href="/grinds">Grinds</a></li>
+                    </ul>
+                    
+               <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
+                
+                <ul class="dropdown-menu">
+                    {{#if logged}}
+                    
+                       
+                       <li><a>{{userid}}</a></li>
+                    
+                    {{/if}}
+                    <li><a href="/users/login">Login</a></li>
+              
+                <li><a href="/users/register">Sign up?</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+           </ul>
+            
+          </div>
+
+      </div>
+    </div>
+            
+    {{{body}}}
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/javascripts/upload.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/auth.js"></script>
+<script src="/javascripts/feed.js"></script>
+<script src="/javascripts/slide.js"></script>
+<script src="/path/to/angular.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+</html>
